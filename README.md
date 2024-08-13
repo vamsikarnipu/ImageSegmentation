@@ -22,3 +22,17 @@ You can install the necessary libraries using the following command:
 
 ```bash
 pip install opencv-python numpy matplotlib transformers
+
+How It Works
+Load Images: The script reads all images from the specified input folder.
+
+Image Segmentation:
+
+The transformers library's pipeline is used to perform image segmentation with the pre-trained model google/deeplabv3_mobilenet_v2_1.0_513.
+The segmentation model identifies the garment in each image.
+Extract and Create Binary Mask:
+
+The script extracts the mask corresponding to the garment (e.g., labeled as "person") and creates a binary mask where the garment is white (255) and the background is black (0).
+Save Output Images:
+
+The binary masks are saved as images in the specified output folder.
